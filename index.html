@@ -1,0 +1,375 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para mi Akemita ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #e9dcc8;
+      color: #543b32;
+      font-family: Georgia, serif;
+      text-align: center;
+    }
+
+    .pagina {
+      width:  min(900px, 92%);
+      margin: 35px auto;
+      padding: 35px 22px;
+      background: #f8f0e3;
+      border: 1px solid #c8ad8d;
+      box-shadow: 0 8px 25px #765b4530;
+    }
+
+    .pequeno {
+      color: #9a705c;
+      letter-spacing: 4px;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(38px, 8vw, 65px);
+      font-weight: normal;
+      margin: 15px 0;
+      color: #70483e;
+    }
+
+    .subtitulo {
+      font-style: italic;
+      color: #987365;
+      font-size: 18px;
+    }
+
+    .separador {
+      color: #a77c68;
+      margin: 30px 0;
+      letter-spacing: 8px;
+    }
+
+    .sobre-contenedor {
+      margin: 35px auto;
+      max-width: 420px;
+    }
+
+    .sobre {
+      position: relative;
+      height: 230px;
+      background: #d6b995;
+      border: 2px solid #b28b68;
+      border-radius: 5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 18px #60452b30;
+      transition: transform 0.3s;
+    }
+
+    .sobre:hover {
+      transform: translateY(-5px);
+    }
+
+    .sobre::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #c7a781;
+  clip-path: polygon(0 0, 50% 55%, 100% 0);
+  border-bottom: 1px solid #a98260;
+  transform-origin: top;
+  transition: transform 0.7s ease;
+  backface-visibility: hidden;
+}
+
+.sobre.abierto::before {
+  transform: rotateX(180deg);
+}
+
+    .sello {
+      z-index: 2;
+      width: 65px;
+      height: 65px;
+      background: #813d42;
+      color: #f8e7d1;
+      border: 3px double #d9b8a0;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      box-shadow: 0 3px 8px #57302d50;
+    }
+
+    .instruccion {
+      margin-top: 18px;
+      color: #8c6655;
+      font-style: italic;
+    }
+
+    .carta {
+      display: none;
+      max-width: 650px;
+      margin: 30px auto;
+      padding: 30px;
+      background: #fff8eb;
+      border: 1px solid #d8c2a4;
+      box-shadow: 0 5px 15px #765b4520;
+      text-align: left;
+      line-height: 1.9;
+      animation: aparecer 1s ease;
+    }
+
+    .carta.abierta {
+      display: block;
+    }
+
+    .carta h2 {
+      text-align: center;
+      font-weight: normal;
+      color: #804e49;
+    }
+
+    .firma {
+      text-align: right;
+      font-style: italic;
+      margin-top: 30px;
+    }
+
+    .recuerdos {
+      margin-top: 55px;
+    }
+
+    .recuerdos h2 {
+      font-size: 30px;
+      font-weight: normal;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 22px;
+      margin-top: 25px;
+    }
+
+    .foto {
+      background: white;
+      padding: 12px 12px 25px;
+      box-shadow: 0 4px 12px #60452b25;
+      transform: rotate(-2deg);
+    }
+
+    .foto:nth-child(even) {
+      transform: rotate(2deg);
+    }
+
+    .espacio-foto {
+      height: 190px;
+      background: #eadcc8;
+      display: grid;
+      place-items: center;
+      color: #967866;
+      font-style: italic;
+      border: 1px dashed #c3a68b;
+    }
+    .imagen-recuerdo {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+}
+
+    .pie-foto {
+      margin-top: 12px;
+      font-style: italic;
+      color: #79584c;
+    }
+
+    footer {
+      margin-top: 55px;
+      color: #987365;
+      font-style: italic;
+      line-height: 1.8;
+    }
+
+    button {
+      background: #80484a;
+      color: #fff5e8;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 3px;
+      font-family: Georgia, serif;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #63383b;
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 500px) {
+      .pagina {
+        padding: 25px 15px;
+      }
+
+      .carta {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="pagina">
+
+    <p class="pequeno">Una pequeña sorpresa para ti</p>
+
+    <h1>Para mi Akemita</h1>
+
+    <p class="subtitulo">
+      Porque incluso a la distancia, siempre estás cerca de mi corazón.
+    </p>
+
+    <div class="separador">♡ · ♡ · ♡</div>
+
+    <section class="sobre-contenedor">
+      <div class="sobre" onclick="abrirCarta()">
+        <div class="sello">♡</div>
+      </div>
+
+      <p class="instruccion" id="instruccion">
+        Abre el sobre para que veas tu sorpresa...
+      </p>
+    </section>
+
+    
+      
+<section class="carta" id="carta">
+  <p class="pequeno" style="text-align:center;">
+    4 de noviembre de 2026
+  </p>
+
+  <h2>Para mi Akemita ♡</h2>
+
+  <p>Akemita,</p>
+
+  <p>
+    Hoy toca cumple mes y cada 4 de cada mes me pongo
+    a pensar en todooo el tiempo que pasamos juntos.
+  </p>
+
+  <p>
+    Me da mucha rabia que no estés aquí o que yo no pueda
+    ir allá. Especialmente en esos días en los que me siento
+    solo y hablar contigo se siente tan tranquilo y reconfortante.
+    Saber que no puedo ir a tu casa como siempre, escaparme
+    para vernos y quedarnos dormidos juntos, a veces me hace
+    mucha falta.
+  </p>
+
+  <p>
+    Es muy bonito despertarme y dejarte tan dormida que ni
+    caso me haces y a las justas me entiendes lo que digo.
+    Me llena el corazón saber que esos momentos son a tu lado.
+  </p>
+
+  <p>
+    Siempre me acuerdo de cómo comenzamos a salir y a hablar
+    más en 2024. Pasaron las cosas tan rápido y ya estamos
+    en 2026. La verdad es que no me arrepiento de nada,
+    cada momento contigo fue muy hermoso.
+  </p>
+
+  <p>
+    La distancia siempre me jode y no es fácil aguantarme
+    las ganas de vernos, pero sé que es por algo y vale
+    la pena porque es por ti.
+  </p>
+
+  <p>
+    Gracias por ayudarme en todo, por las llamadas, las risas
+    y por hacer que esto realmente funcione a pesar de todo.
+  </p>
+
+  <p>
+    Estoy seguro de que ya nos tocará estar juntos sin
+    separarnos y pasarnos de largo.
+  </p>
+
+  <p>
+    Te amo muchísimo y te extraño siempre.
+  </p>
+
+  <p class="firma">
+    Sebas ♡
+  </p>
+</section>
+
+    
+
+    <section class="recuerdos">
+      <div class="separador">♡ · ♡ · ♡</div>
+
+      <h2>Nuestros recuerdos</h2>
+
+      <p class="subtitulo">
+        Pequeños momentos que guardo con mucho cariño.
+      </p>
+
+      <div class="galeria">
+        <div class="foto">
+          <img class="imagen-recuerdo" src="fotos/foto 1.jpeg" alt="Nuestro recuerdo">
+          <p class="pie-foto">Un recuerdo especial ♡</p>
+        </div>
+
+        <div class="foto">
+          <img class="imagen-recuerdo" src="fotos/foto 2.jpeg" alt="Un momento especial">
+          <p class="pie-foto">Un momento contigo ♡</p>
+        </div>
+
+        <div class="foto">
+          <img class="imagen-recuerdo" src="fotos/foto 3.jpeg" alt="Un recuerdo juntos">
+          <p class="pie-foto">De esos días bonitos ♡</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Un año y ocho meses de recuerdos...</p>
+      <p>Y una historia que siempre tendrá un lugar especial. ♡</p>
+      <p>Con amor, Sebastián.</p>
+    </footer>
+
+  </main>
+
+  <script>
+    function abrirCarta() {
+      const carta = document.getElementById("carta");
+      const instruccion = document.getElementById("instruccion");
+      const sobre = document.querySelector(".sobre");
+sobre.classList.toggle("abierto");
+
+      carta.classList.toggle("abierta");
+
+      if (carta.classList.contains("abierta")) {
+        instruccion.textContent = "Una carta escrita especialmente para ti ♡";
+        carta.scrollIntoView({ behavior: "smooth", block: "center" });
+      } else {
+        instruccion.textContent = "Toca el sobre para descubrir tu sorpresa...";
+      }
+    }
+  </script>
+
+</body>
+</html>
